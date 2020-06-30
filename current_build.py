@@ -11,7 +11,7 @@ conn = pyodbc.connect('Driver={SQL Server};'
                       'Server=tcp:nbaserver270.database.windows.net,1433;'
                       'Database=NBA_stats;'
                       'Uid=iabrim;'
-                      'Pwd=Logmein!@270;'
+                      'Pwd=************;'
                       'Encrypt=yes;'
                       'TrustServerCertificate=no;'
                       'Timeout=30;')
@@ -59,7 +59,7 @@ def create_new(usr, pas):
     cursor.execute("CREATE TABLE " +user+ " (roster_name nchar(15), [Player Name] varchar(50));")
     conn.commit()
     #----GUI FOR SUCCESS MESSAGE-----
-    anewwindow = Toplevel()                                                                                                  
+    anewwindow = Toplevel()
     anewwindow.title("")
     anewwindow.configure(bg='gray86')
     anewwindow.geometry("300x150+600+300")
