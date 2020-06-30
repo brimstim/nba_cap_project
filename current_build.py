@@ -5,7 +5,6 @@ import pandas as pd
 from pandasgui import show
 import time
 import numpy as np
-import matplotlib as plt
 
 #---AZURE SQL CONNECTION--------------------------------------------------------
 conn = pyodbc.connect('Driver={SQL Server};'
@@ -60,16 +59,16 @@ def create_new(usr, pas):
     cursor.execute("CREATE TABLE " +user+ " (roster_name nchar(15), [Player Name] varchar(50));")
     conn.commit()
     #----GUI FOR SUCCESS MESSAGE-----
-    anewwindow = Toplevel()                                                                                                  #---
-    anewwindow.title("")                                                                                                     #---
+    anewwindow = Toplevel()                                                                                                  
+    anewwindow.title("")
     anewwindow.configure(bg='gray86')
     anewwindow.geometry("300x150+600+300")
                                                                               #---
     announce = Label(anewwindow, text="Congrats, please exit the application\n and rerun under new credentials", padx=50, pady=5, bg='gray86')                               #---
-    announce.config(font=("fixedsys", 8))                                                                                   #---
+    announce.config(font=("fixedsys", 8))
     announce.pack()
-    b = Button(anewwindow, text="EXIT",command=exiter, padx=50, pady=5, bg='Salmon')                               #---
-    b.config(font=("fixedsys", 12))                                                                                   #---
+    b = Button(anewwindow, text="EXIT",command=exiter, padx=50, pady=5, bg='Salmon')
+    b.config(font=("fixedsys", 12))
     b.pack()
 #----GUI FOR LOGIN--------------------------------------------------------------
 log = Label(loginwin, text="LOGIN: ", pady=10, bg='gray10', fg='white smoke')
